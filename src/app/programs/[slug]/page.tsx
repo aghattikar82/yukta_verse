@@ -1,5 +1,6 @@
 "use client";
 
+import { use } from "react";
 import { courses } from "@/data/courses";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -8,8 +9,9 @@ import { motion } from "framer-motion";
 import { ArrowLeft, CheckCircle2, Calendar, IndianRupee, Clock, DownloadCloud } from "lucide-react";
 import LeadForm from "@/components/LeadForm";
 
-export default function CoursePage({ params }: { params: { slug: string } }) {
-  const course = courses.find((c) => c.slug === params.slug);
+export default function CoursePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = use(params);
+  const course = courses.find((c) => c.slug === slug);
 
   if (!course) {
     notFound();
