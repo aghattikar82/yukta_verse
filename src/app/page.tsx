@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, Users, Award, Briefcase, PlayCircle, BarChart3, Cloud, BrainCircuit, LineChart, Building, Network, MessageCircle, Star, Zap, Cpu } from "lucide-react";
 import LeadForm from "@/components/LeadForm";
+import { courses } from "@/data/courses";
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
 
 const popUp: Variants = {
@@ -222,37 +223,34 @@ export default function Home() {
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {[
-              { title: "Data & Business Analytics", icon: <BarChart3 />, desc: "Master big data tools, dashboards, and analytical storytelling.", img: "/course_data.png" },
-              { title: "Cloud & DevOps", icon: <Cloud />, desc: "Design & deploy resilient cloud infra with AWS, Kubernetes & CI/CD.", img: "/course_cloud.png" },
-              { title: "Gen AI & Agentic AI", icon: <BrainCircuit />, desc: "Build enterprise LLMs, RAG layers, and autonomous agents.", img: "/course_ai.png" },
-              { title: "AI Digital Marketing", icon: <LineChart />, desc: "Growth hacking with precision AI campaigns and automation.", img: "/course_marketing.png" },
-              { title: "Financial Modelling", icon: <Building />, desc: "IB standards, Valuation, and Risk assessment in modern finance.", img: "/course_finance.png" },
-              { title: "Multi-Cloud Architecture", icon: <Network />, desc: "Seamless interoperability and scaling across AWS, Azure, GCP.", img: "/course_multicloud.png" }
-            ].map((program, idx) => (
+            {courses.map((program, idx) => (
               <motion.div 
                 key={idx} 
                 variants={popUp}
                 whileHover={{ y: -15, scale: 1.05 }}
-                className="glass group transition-all duration-300 border-2 border-white/5 hover:border-red-500/50 bg-black/80 hover:bg-black/95 backdrop-blur-3xl relative overflow-hidden shadow-2xl cursor-pointer rounded-3xl"
+                className="glass group transition-all duration-300 border-2 border-white/5 hover:border-red-500/50 bg-black/80 hover:bg-black/95 backdrop-blur-3xl relative overflow-hidden shadow-2xl cursor-pointer rounded-3xl flex flex-col"
               >
-                <div className="relative h-56 w-full overflow-hidden bg-black/50">
+                <div className="relative h-56 w-full overflow-hidden bg-black/50 shrink-0">
                    <Image src={program.img} alt={program.title} fill className="object-cover opacity-70 group-hover:opacity-100 transition-transform duration-700 group-hover:scale-110 mix-blend-screen" />
-                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-                   <div className="absolute bottom-4 left-4 z-10">
-                     <motion.div 
-                       whileHover={{ rotate: 180, scale: 1.2 }}
-                       className={`w-12 h-12 rounded-xl flex items-center justify-center bg-black/80 backdrop-blur-md text-red-500 border border-red-500/50 group-hover:bg-red-600 group-hover:text-white shadow-[0_0_20px_rgba(225,29,72,0.8)]`}
-                     >
-                       <div className="w-6 h-6">{program.icon}</div>
-                     </motion.div>
+                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                   
+                   {/* Badges Overlays */}
+                   <div className="absolute top-4 left-4 z-10 flex gap-2">
+                     <div className="bg-red-600 text-white text-xs font-bold px-3 py-1.5 rounded-md shadow-lg backdrop-blur-md uppercase">
+                       {program.duration}
+                     </div>
+                   </div>
+                   <div className="absolute top-4 right-4 z-10">
+                     <div className="bg-white/10 border border-white/20 text-white text-xs font-bold px-3 py-1.5 rounded-md backdrop-blur-md shadow-lg">
+                       {program.price}
+                     </div>
                    </div>
                 </div>
-                <div className="p-8 relative">
-                  <h3 className="text-2xl md:text-3xl font-extrabold mb-3 font-outfit text-white group-hover:text-red-400 transition-colors drop-shadow-xl">{program.title}</h3>
-                  <p className="text-white/60 text-sm mb-8 leading-relaxed font-medium">{program.desc}</p>
-                  <Link href={`/programs`} className="inline-flex w-full px-6 py-4 rounded-xl border border-white/10 bg-white/5 text-white hover:text-white hover:bg-red-600 hover:border-red-500 hover:shadow-[0_0_25px_rgba(225,29,72,0.6)] font-bold items-center justify-center gap-3 transition-all text-sm uppercase tracking-wider relative overflow-hidden group/btn">
-                    <span className="relative z-10 w-full text-center flex items-center justify-center gap-2">Learn More <ChevronRight size={18} className="group-hover/btn:translate-x-2 transition-transform" /></span>
+                <div className="p-8 relative flex flex-col flex-1">
+                  <h3 className="text-2xl md:text-3xl font-black mb-3 font-outfit text-white group-hover:text-red-400 transition-colors drop-shadow-xl line-clamp-2 leading-tight">{program.title}</h3>
+                  <p className="text-white/60 text-sm mb-8 leading-relaxed font-medium line-clamp-3 flex-1">{program.shortDesc}</p>
+                  <Link href={`/programs/${program.slug}`} className="mt-auto inline-flex w-full px-6 py-4 rounded-xl border border-white/10 bg-white/5 text-white hover:text-white hover:bg-red-600 hover:border-red-500 hover:shadow-[0_0_25px_rgba(225,29,72,0.6)] font-bold items-center justify-center gap-3 transition-all text-sm uppercase tracking-wider relative overflow-hidden group/btn">
+                    <span className="relative z-10 w-full text-center flex items-center justify-center gap-2">View Course <ChevronRight size={18} className="group-hover/btn:translate-x-2 transition-transform" /></span>
                   </Link>
                 </div>
               </motion.div>
