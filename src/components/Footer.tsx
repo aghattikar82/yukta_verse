@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Linkedin, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Globe, Share2 } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -9,10 +9,8 @@ export default function Footer() {
           <h2 className="text-2xl font-bold font-outfit mb-2">YUKTA VERSE</h2>
           <p className="text-gray-400 mb-6 text-sm">Learn Future Skills in One Place. The ultimate platform to build your tech and AI career.</p>
           <div className="flex space-x-4">
-            <a href="#" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-[#FFD700] hover:text-black transition-colors"><Linkedin size={18} /></a>
-            <a href="#" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-[#FFD700] hover:text-black transition-colors"><Twitter size={18} /></a>
-            <a href="#" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-[#FFD700] hover:text-black transition-colors"><Instagram size={18} /></a>
-            <a href="#" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-[#FFD700] hover:text-black transition-colors"><Youtube size={18} /></a>
+            <a href="#" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-[#FFD700] hover:text-black transition-colors" title="LinkedIn"><Share2 size={18} /></a>
+            <a href="#" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-[#FFD700] hover:text-black transition-colors" title="Website"><Globe size={18} /></a>
           </div>
         </div>
         
