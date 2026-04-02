@@ -92,12 +92,12 @@ export default function Home() {
               Industry-ready programs designed for modern careers. Build production-grade skills and scale your career with 1-on-1 expert mentorship.
             </motion.p>
             
-            <motion.div variants={popUp} className="flex flex-wrap gap-4 pt-4">
-              <Link href="#programs" className="px-8 py-4 rounded-full bg-red-600 text-white font-bold tracking-widest hover:bg-red-500 shadow-[0_0_30px_rgba(225,29,72,0.6)] hover:shadow-[0_0_45px_rgba(225,29,72,0.9)] transition-all flex items-center gap-3 transform hover:scale-110 active:scale-95 group">
-                Explore Programs <ChevronRight className="group-hover:translate-x-2 transition-transform" size={20} />
+            <motion.div variants={popUp} className="flex flex-col sm:flex-row flex-wrap gap-5 pt-8 w-full group relative z-20">
+              <Link href="#programs" className="w-full sm:w-auto px-10 py-5 rounded-full bg-gradient-to-r from-red-600 to-red-500 text-white font-black tracking-widest hover:from-red-500 hover:to-red-400 shadow-[0_0_30px_rgba(225,29,72,0.5)] hover:shadow-[0_0_50px_rgba(225,29,72,0.8)] transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1 text-[15px] uppercase ring-2 ring-red-600/50 hover:ring-red-400">
+                Explore Programs <ChevronRight className="group-hover:translate-x-1 transition-transform" size={20} />
               </Link>
-              <Link href="#consultation" className="px-8 py-4 rounded-full border-2 border-white/20 hover:border-red-500 bg-white/5 text-white font-bold backdrop-blur-md transition-all flex items-center gap-2 transform hover:scale-105 hover:bg-white/10 group">
-                <PlayCircle size={24} className="text-red-500 group-hover:scale-110 transition-transform" /> Book Consultation
+              <Link href="#consultation" className="w-full sm:w-auto px-10 py-5 rounded-full border border-white/20 bg-white/[0.05] text-white font-bold backdrop-blur-xl hover:bg-white/[0.1] hover:border-white/50 transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1 text-[15px] uppercase shadow-lg">
+                <PlayCircle size={24} className="text-red-500 group-hover:scale-110 transition-transform" /> Consultation
               </Link>
             </motion.div>
           </motion.div>
@@ -223,32 +223,38 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {[
-              { title: "Data & Business Analytics", icon: <BarChart3 />, desc: "Master big data tools, dashboards, and analytical storytelling." },
-              { title: "Cloud & DevOps", icon: <Cloud />, desc: "Design & deploy resilient cloud infra with AWS, Kubernetes & CI/CD." },
-              { title: "Gen AI & Agentic AI", icon: <BrainCircuit />, desc: "Build enterprise LLMs, RAG layers, and autonomous agents." },
-              { title: "AI Digital Marketing", icon: <LineChart />, desc: "Growth hacking with precision AI campaigns and automation." },
-              { title: "Financial Modelling", icon: <Building />, desc: "IB standards, Valuation, and Risk assessment in modern finance." },
-              { title: "Multi-Cloud Architecture", icon: <Network />, desc: "Seamless interoperability and scaling across AWS, Azure, GCP." }
+              { title: "Data & Business Analytics", icon: <BarChart3 />, desc: "Master big data tools, dashboards, and analytical storytelling.", img: "/course_data.png" },
+              { title: "Cloud & DevOps", icon: <Cloud />, desc: "Design & deploy resilient cloud infra with AWS, Kubernetes & CI/CD.", img: "/course_cloud.png" },
+              { title: "Gen AI & Agentic AI", icon: <BrainCircuit />, desc: "Build enterprise LLMs, RAG layers, and autonomous agents.", img: "/course_ai.png" },
+              { title: "AI Digital Marketing", icon: <LineChart />, desc: "Growth hacking with precision AI campaigns and automation.", img: "/course_marketing.png" },
+              { title: "Financial Modelling", icon: <Building />, desc: "IB standards, Valuation, and Risk assessment in modern finance.", img: "/course_finance.png" },
+              { title: "Multi-Cloud Architecture", icon: <Network />, desc: "Seamless interoperability and scaling across AWS, Azure, GCP.", img: "/course_multicloud.png" }
             ].map((program, idx) => (
               <motion.div 
                 key={idx} 
                 variants={popUp}
-                whileHover={{ y: -15, scale: 1.05, rotateX: 5 }}
-                className="glass p-10 group transition-all duration-300 border-t-8 border-t-white/10 hover:border-t-red-600 bg-black/60 hover:bg-black/80 backdrop-blur-2xl relative overflow-hidden shadow-2xl cursor-pointer perspective-1000"
+                whileHover={{ y: -15, scale: 1.05 }}
+                className="glass group transition-all duration-300 border-2 border-white/5 hover:border-red-500/50 bg-black/80 hover:bg-black/95 backdrop-blur-3xl relative overflow-hidden shadow-2xl cursor-pointer rounded-3xl"
               >
-                <div className="absolute -top-10 -right-10 w-48 h-48 bg-red-600/20 blur-[50px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <motion.div 
-                  whileHover={{ rotate: 180, scale: 1.2 }}
-                  transition={{ type: "spring", stiffness: 200 }}
-                  className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 bg-red-600/10 text-red-500 border border-red-500/30 group-hover:bg-red-600 group-hover:text-white group-hover:shadow-[0_0_30px_rgba(225,29,72,0.8)]`}
-                >
-                  <div className="w-8 h-8">{program.icon}</div>
-                </motion.div>
-                <h3 className="text-3xl font-bold mb-4 font-outfit text-white group-hover:text-red-400 transition-colors">{program.title}</h3>
-                <p className="text-white/60 text-base mb-8 leading-relaxed font-medium">{program.desc}</p>
-                <Link href={`/programs`} className="inline-block px-6 py-2 rounded-full border border-red-500/50 text-red-400 hover:text-white hover:bg-red-600 font-bold flex items-center gap-2 group-hover:gap-4 transition-all text-sm w-max uppercase tracking-wider">
-                  Learn More <ChevronRight size={16} />
-                </Link>
+                <div className="relative h-56 w-full overflow-hidden bg-black/50">
+                   <Image src={program.img} alt={program.title} fill className="object-cover opacity-70 group-hover:opacity-100 transition-transform duration-700 group-hover:scale-110 mix-blend-screen" />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                   <div className="absolute bottom-4 left-4 z-10">
+                     <motion.div 
+                       whileHover={{ rotate: 180, scale: 1.2 }}
+                       className={`w-12 h-12 rounded-xl flex items-center justify-center bg-black/80 backdrop-blur-md text-red-500 border border-red-500/50 group-hover:bg-red-600 group-hover:text-white shadow-[0_0_20px_rgba(225,29,72,0.8)]`}
+                     >
+                       <div className="w-6 h-6">{program.icon}</div>
+                     </motion.div>
+                   </div>
+                </div>
+                <div className="p-8 relative">
+                  <h3 className="text-2xl md:text-3xl font-extrabold mb-3 font-outfit text-white group-hover:text-red-400 transition-colors drop-shadow-xl">{program.title}</h3>
+                  <p className="text-white/60 text-sm mb-8 leading-relaxed font-medium">{program.desc}</p>
+                  <Link href={`/programs`} className="inline-flex w-full px-6 py-4 rounded-xl border border-white/10 bg-white/5 text-white hover:text-white hover:bg-red-600 hover:border-red-500 hover:shadow-[0_0_25px_rgba(225,29,72,0.6)] font-bold items-center justify-center gap-3 transition-all text-sm uppercase tracking-wider relative overflow-hidden group/btn">
+                    <span className="relative z-10 w-full text-center flex items-center justify-center gap-2">Learn More <ChevronRight size={18} className="group-hover/btn:translate-x-2 transition-transform" /></span>
+                  </Link>
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -415,11 +421,11 @@ export default function Home() {
               <p className="text-2xl text-white/80 max-w-3xl mx-auto mb-12 font-medium">
                 Don't let the AI revolution pass you by. Join the next elite cohort and engineer your future.
               </p>
-              <div className="flex flex-wrap justify-center gap-8">
-                <Link href="#programs" className="px-12 py-6 rounded-full bg-red-600 text-white font-black uppercase tracking-widest hover:bg-red-500 shadow-[0_0_50px_rgba(225,29,72,0.8)] transition-all transform hover:-translate-y-2 hover:scale-110 active:scale-95 text-lg">
+              <div className="flex flex-col sm:flex-row justify-center gap-5 w-full max-w-2xl mx-auto z-20 relative">
+                <Link href="#programs" className="w-full sm:w-auto px-12 py-5 rounded-full bg-gradient-to-r from-red-600 to-red-500 text-white font-black uppercase tracking-widest hover:from-red-500 hover:to-red-400 shadow-[0_0_50px_rgba(225,29,72,0.6)] hover:shadow-[0_0_70px_rgba(225,29,72,0.9)] transition-all transform hover:-translate-y-2 hover:scale-105 active:scale-95 text-lg ring-2 ring-red-600/50 flex justify-center">
                   Enroll Now
                 </Link>
-                <a href="https://wa.me/919876543210" className="px-12 py-6 rounded-full border-2 border-white/20 hover:border-white/80 backdrop-blur-xl hover:bg-white/10 transition-all font-bold flex items-center gap-3 text-white text-lg transform hover:-translate-y-2 hover:scale-105">
+                <a href="https://wa.me/919876543210" className="w-full sm:w-auto px-12 py-5 rounded-full border-2 border-white/20 hover:border-white/80 backdrop-blur-xl bg-white/[0.05] hover:bg-white/[0.1] transition-all font-bold flex items-center justify-center gap-3 text-white text-lg transform hover:-translate-y-2 hover:scale-105 shadow-xl">
                   <MessageCircle size={28} className="text-[#25D366] drop-shadow-[0_0_15px_rgba(37,211,102,0.8)]" /> WhatsApp Us
                 </a>
               </div>
