@@ -17,7 +17,7 @@ export default function LeadForm() {
   return (
     <div className="glass p-8 rounded-2xl md:max-w-md w-full relative overflow-hidden">
       {/* Glow effects */}
-      <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFD700]/10 blur-3xl rounded-full"></div>
+      <div className="absolute top-0 right-0 w-32 h-32 bg-red-600/10 blur-3xl rounded-full"></div>
       <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#ea3a3a]/10 blur-3xl rounded-full"></div>
 
       <div className="relative z-10">
@@ -35,7 +35,7 @@ export default function LeadForm() {
               <label className="block text-xs text-gray-400 mb-1">Full Name</label>
               <input
                 type="text"
-                className="w-full bg-[#05080c] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#FFD700] transition-colors"
+                className="w-full bg-[#05080c] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-500 transition-colors"
                 required
               />
             </div>
@@ -43,7 +43,7 @@ export default function LeadForm() {
               <label className="block text-xs text-gray-400 mb-1">Email Address</label>
               <input
                 type="email"
-                className="w-full bg-[#05080c] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#FFD700] transition-colors"
+                className="w-full bg-[#05080c] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-500 transition-colors"
                 required
               />
             </div>
@@ -51,13 +51,13 @@ export default function LeadForm() {
               <label className="block text-xs text-gray-400 mb-1">Phone Number (WhatsApp)</label>
               <input
                 type="tel"
-                className="w-full bg-[#05080c] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#FFD700] transition-colors"
+                className="w-full bg-[#05080c] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-500 transition-colors"
                 required
               />
             </div>
             <div>
               <label className="block text-xs text-gray-400 mb-1">Interested Program</label>
-              <select className="w-full bg-[#05080c] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#FFD700] transition-colors" required>
+              <select className="w-full bg-[#05080c] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-500 transition-colors" required>
                 <option value="" disabled selected>Select a program</option>
                 <option value="data">Data & Business Analytics</option>
                 <option value="cloud">Cloud & DevOps</option>
@@ -70,7 +70,7 @@ export default function LeadForm() {
             
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-[#FFD700] to-[#ffb300] text-black font-semibold rounded-lg px-4 py-3 hover:shadow-[0_0_15px_rgba(255,215,0,0.5)] transition-all flex items-center justify-center gap-2 mt-4"
+              className="w-full bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold rounded-lg px-4 py-3 hover:shadow-[0_0_15px_rgba(225,29,72,0.5)] transition-all flex items-center justify-center gap-2 mt-4"
             >
               Get Free Consultation
             </button>

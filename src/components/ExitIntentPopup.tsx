@@ -40,12 +40,12 @@ export default function ExitIntentPopup() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-full bg-[#05080c] border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#FFD700] transition-colors"
+              className="w-full bg-[#05080c] border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500 transition-colors"
               required
             />
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-[#FFD700] to-[#ffb300] text-black font-semibold rounded-lg px-4 py-3 hover:shadow-[0_0_15px_rgba(255,215,0,0.5)] transition-all"
+              className="w-full bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold rounded-lg px-4 py-3 hover:shadow-[0_0_15px_rgba(225,29,72,0.5)] transition-all"
             >
               Get Free Guide & Discount
             </button>

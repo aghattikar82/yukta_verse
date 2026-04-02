@@ -1,13 +1,14 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-primary-gold: #FFD700;
-  --color-secondary-red: #ea3a3a;
-  --color-bg-dark: #0a0f18;
-  --color-bg-darker: #05080c;
-  --color-bg-glass: rgba(20, 25, 40, 0.4);
-  --color-bg-glass-hover: rgba(30, 35, 60, 0.6);
-  --color-border-glass: rgba(255, 255, 255, 0.08);
+  --color-primary: #E11D48; /* Red */
+  --color-primary-light: #FF4D6D;
+  --color-secondary: #FFFFFF; /* White */
+  --color-bg-dark: #050505;
+  --color-bg-darker: #000000;
+  --color-bg-glass: rgba(20, 20, 20, 0.6);
+  --color-bg-glass-hover: rgba(30, 30, 30, 0.8);
+  --color-border-glass: rgba(255, 255, 255, 0.1);
 }
 
 :root {
@@ -16,33 +17,33 @@
 
 body {
   background-color: var(--color-bg-dark);
-  background-image: radial-gradient(circle at top right, rgba(20, 25, 40, 0.8), var(--color-bg-darker));
+  background-image: radial-gradient(circle at top right, rgba(225, 29, 72, 0.15), var(--color-bg-darker));
   color: #f0f4f8;
   background-attachment: fixed;
 }
 
 @layer utilities {
   .glass {
-    @apply bg-[var(--color-bg-glass)] backdrop-blur-md border border-[var(--color-border-glass)] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] rounded-2xl;
+    @apply bg-[var(--color-bg-glass)] backdrop-blur-xl border border-[var(--color-border-glass)] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] rounded-2xl;
   }
   .glass-hover:hover {
-    @apply bg-[var(--color-bg-glass-hover)] shadow-[0_8px_32px_0_rgba(0,0,0,0.5)];
+    @apply bg-[var(--color-bg-glass-hover)] shadow-[0_8px_32px_0_rgba(225,29,72,0.2)] border-[var(--color-primary-light)]/30;
   }
   .gradient-text {
-    @apply bg-gradient-to-r from-[var(--color-primary-gold)] to-[var(--color-secondary-red)] inline-block text-transparent bg-clip-text;
+    @apply bg-gradient-to-r from-red-500 to-white inline-block text-transparent bg-clip-text;
   }
   .text-glow {
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    text-shadow: 0 0 15px rgba(225, 29, 72, 0.6);
   }
 }
 
-/* Animations */
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0px); }
+/* Base custom animations */
+@keyframes pulse-glow {
+  0% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+  100% { opacity: 0.4; transform: scale(1); }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+.animate-pulse-glow {
+  animation: pulse-glow 8s ease-in-out infinite;
 }
