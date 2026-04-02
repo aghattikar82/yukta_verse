@@ -20,14 +20,21 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
 
   return (
     <div className="bg-[#050505] text-white min-h-screen pt-24 font-inter selection:bg-red-500/30">
-      {/* 1. Header Banner */}
+      {/* 1. Full Page Background Photo Overlay */}
+      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
+         <Image src={course.img} alt={course.title} fill className="object-cover opacity-20 mix-blend-screen scale-110 blur-[10px] transform" />
+         <div className="absolute inset-0 bg-black/70"></div>
+      </div>
+
+      {/* 2. Header Banner Photo */}
       <section className="relative">
         <div className="absolute inset-0 h-[60vh] w-full z-0 overflow-hidden">
-           <Image src={course.img} alt={course.title} fill className="object-cover opacity-20 mix-blend-screen scale-105 transform" />
-           <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-black/80 to-[#050505]"></div>
+           <Image src={course.img} alt={course.title} fill className="object-cover opacity-50 mix-blend-luminosity scale-105 transform" />
+           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/60 to-transparent"></div>
+           <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent"></div>
         </div>
         
-        <div className="container mx-auto px-6 relative z-10 pt-16 pb-24 border-b border-white/5">
+        <div className="container mx-auto px-6 relative z-10 pt-16 pb-24 border-b border-white/10">
           <Link href="/#programs" className="inline-flex items-center gap-2 text-red-500 hover:text-red-400 font-bold tracking-widest text-sm uppercase mb-8 transition-colors bg-red-500/10 px-4 py-2 rounded-full border border-red-500/20">
              <ArrowLeft size={16} /> Back to Programs
           </Link>

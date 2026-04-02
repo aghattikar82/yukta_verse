@@ -293,7 +293,7 @@ export const courses = [
     "price": "₹39,999",
     "priceDetail": "With GST",
     "duration": "3 Months",
-    "img": "/course_ai.png",
+    "img": "/course_agentic.png",
     "overview": {
       "heading": "Overview: Generative AI (Data & Tech)",
       "content": "A highly specialized curriculum focusing on building the foundations required to leverage Gen AI and construct Agentic AI workers. Deploy digital worker chains that function autonomously."
