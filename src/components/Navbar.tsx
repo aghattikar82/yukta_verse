@@ -23,8 +23,9 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link href="/" className="text-xl md:text-2xl font-bold font-outfit uppercase tracking-wide text-white">
-          YUKTA VERSE <span className="text-red-500 text-sm md:text-base ml-1 font-normal">(AI Lab)</span>
+        <Link href="/" className="flex items-center gap-3 text-xl md:text-2xl font-bold font-outfit shadow-sm">
+          <video src="/logo-animation.mp4" autoPlay loop muted playsInline className="w-8 md:w-10 h-8 md:h-10 object-cover rounded-full mix-blend-screen" />
+          <span className="uppercase tracking-wide text-white">YUKTA VERSE</span>
         </Link>
 
         {/* Desktop Nav */}

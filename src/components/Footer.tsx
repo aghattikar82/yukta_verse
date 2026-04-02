@@ -6,7 +6,10 @@ export default function Footer() {
     <footer className="bg-[#05080c] border-t border-white/10 pt-20 pb-10 mt-20">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         <div>
-          <h2 className="text-2xl font-bold font-outfit mb-2">YUKTA VERSE</h2>
+          <div className="flex items-center gap-3 mb-2">
+            <video src="/logo-animation.mp4" autoPlay loop muted playsInline className="w-8 h-8 object-cover rounded-full mix-blend-screen" />
+            <h2 className="text-2xl font-bold font-outfit">YUKTA VERSE</h2>
+          </div>
           <p className="text-gray-400 mb-6 text-sm">Learn Future Skills in One Place. The ultimate platform to build your tech and AI career.</p>
           <div className="flex space-x-4">
             <a href="#" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-[#FFD700] hover:text-black transition-colors" title="LinkedIn"><Share2 size={18} /></a>
