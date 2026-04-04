@@ -6,9 +6,13 @@ export default function Footer() {
     <footer className="bg-[#05080c] border-t border-white/10 pt-20 pb-10 mt-20">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         <div>
-          <div className="flex items-center gap-3 mb-2">
-            <video src="/logo-animation.mp4" autoPlay loop muted playsInline className="w-8 h-8 object-cover rounded-full mix-blend-screen" />
-            <h2 className="text-2xl font-bold font-outfit">YUKTA VERSE</h2>
+          <div className="flex items-center gap-5 mb-4 group cursor-pointer">
+            <div className="relative w-10 h-10 overflow-hidden rounded-full border border-red-500/20 shadow-[0_0_15px_rgba(225,29,72,0.4)] group-hover:scale-105 transition-transform">
+               <video src="/logo-animation.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover mix-blend-screen" />
+            </div>
+            <h2 className="text-3xl font-black font-outfit uppercase tracking-[0.1em] text-transparent bg-clip-text bg-gradient-to-r from-white via-red-100 to-red-500">
+               YUKTA VERSE
+            </h2>
           </div>
           <p className="text-gray-400 mb-6 text-sm">Learn Future Skills in One Place. The ultimate platform to build your tech and AI career.</p>
           <div className="flex space-x-4">

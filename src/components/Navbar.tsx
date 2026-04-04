@@ -23,9 +23,13 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-3 text-xl md:text-2xl font-bold font-outfit shadow-sm">
-          <video src="/logo-animation.mp4" autoPlay loop muted playsInline className="w-8 md:w-10 h-8 md:h-10 object-cover rounded-full mix-blend-screen" />
-          <span className="uppercase tracking-wide text-white">YUKTA VERSE</span>
+        <Link href="/" className="flex items-center gap-5 text-2xl md:text-3xl font-black font-outfit shadow-sm group">
+          <div className="relative w-10 md:w-12 h-10 md:h-12 overflow-hidden rounded-full border border-red-500/20 shadow-[0_0_15px_rgba(225,29,72,0.4)] group-hover:scale-105 transition-transform">
+             <video src="/logo-animation.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover mix-blend-screen" />
+          </div>
+          <span className="uppercase tracking-[0.15em] text-transparent bg-clip-text bg-gradient-to-r from-white via-red-100 to-red-500 drop-shadow-md">
+            YUKTA VERSE
+          </span>
         </Link>
 
         {/* Desktop Nav */}
