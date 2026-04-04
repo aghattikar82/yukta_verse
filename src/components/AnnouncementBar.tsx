@@ -19,6 +19,7 @@ export default function AnnouncementBar() {
 
   if (!data || !data.isActive || !visible) return null;
 
+  return (
     <div className="bg-white text-red-600 outline outline-1 outline-red-100 text-sm font-bold tracking-wide py-2.5 px-4 relative z-50 flex items-center justify-center shadow-[0_4px_20px_rgba(255,255,255,0.1)] animate-in slide-in-from-top">
       <div className="container mx-auto text-center pr-8 drop-shadow-sm">
         {data.text}
