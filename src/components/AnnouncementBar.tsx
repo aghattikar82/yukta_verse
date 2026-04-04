@@ -19,14 +19,13 @@ export default function AnnouncementBar() {
 
   if (!data || !data.isActive || !visible) return null;
 
-  return (
-    <div className="bg-gradient-to-r from-red-700 to-red-600 text-white text-sm font-semibold tracking-wide py-2.5 px-4 relative z-50 flex items-center justify-center shadow-lg animate-in slide-in-from-top border-b border-red-500/50">
-      <div className="container mx-auto text-center pr-8">
+    <div className="bg-white text-red-600 outline outline-1 outline-red-100 text-sm font-bold tracking-wide py-2.5 px-4 relative z-50 flex items-center justify-center shadow-[0_4px_20px_rgba(255,255,255,0.1)] animate-in slide-in-from-top">
+      <div className="container mx-auto text-center pr-8 drop-shadow-sm">
         {data.text}
       </div>
       <button 
         onClick={() => setVisible(false)} 
-        className="absolute right-4 hover:bg-black/20 p-1 rounded-full transition-colors"
+        className="absolute right-4 hover:bg-gray-100 p-1 rounded-full transition-colors text-red-400 hover:text-red-600"
       >
         <X size={16} />
       </button>

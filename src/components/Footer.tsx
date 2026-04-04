@@ -6,13 +6,13 @@ export default function Footer() {
     <footer className="bg-[#05080c] border-t border-white/10 pt-20 pb-10 mt-20">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         <div>
-          <div className="flex items-center gap-6 mb-6 group cursor-pointer">
+          <div className="flex items-center gap-4 mb-6 group cursor-pointer">
             <div className="relative w-16 h-16 md:w-20 md:h-20 overflow-hidden rounded-full border border-red-500/20 shadow-[0_0_20px_rgba(225,29,72,0.6)] group-hover:scale-110 transition-all duration-300">
-               <video src="/logo-animation.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover mix-blend-screen scale-110" />
+               <video src="/logo-animation.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover scale-110" />
             </div>
-            <div className="text-3xl md:text-4xl font-black font-outfit uppercase tracking-[0.1em] flex items-center">
+            <div className="text-2xl font-black font-outfit uppercase tracking-[0.1em] flex items-center">
                <span className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]">YUKTA</span>
-               <span className="ml-3 text-transparent bg-clip-text bg-gradient-to-br from-red-600 via-red-800 to-red-950 drop-shadow-[0_0_15px_rgba(153,27,27,0.8)]">VERSE</span>
+               <span className="ml-2 text-transparent bg-clip-text bg-gradient-to-br from-red-600 via-red-800 to-red-950 drop-shadow-[0_0_15px_rgba(153,27,27,0.8)]">VERSE</span>
             </div>
           </div>
           <p className="text-gray-400 mb-6 text-sm">Learn Future Skills in One Place. The ultimate platform to build your tech and AI career.</p>

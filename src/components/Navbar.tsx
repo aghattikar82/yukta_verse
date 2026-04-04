@@ -23,13 +23,13 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-5 text-2xl md:text-3xl font-black font-outfit shadow-sm group">
+        <Link href="/" className="flex items-center gap-4 text-xl font-black font-outfit shadow-sm group">
           <div className="relative w-14 md:w-20 h-14 md:h-20 overflow-hidden rounded-full border border-red-500/20 shadow-[0_0_20px_rgba(225,29,72,0.6)] group-hover:scale-110 transition-all duration-300">
-             <video src="/logo-animation.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover mix-blend-screen scale-110" />
+             <video src="/logo-animation.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover scale-110" />
           </div>
-          <div className="uppercase tracking-[0.15em] drop-shadow-lg flex items-center">
+          <div className="uppercase tracking-[0.1em] drop-shadow-lg flex items-center">
             <span className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]">YUKTA</span>
-            <span className="ml-3 text-transparent bg-clip-text bg-gradient-to-br from-red-600 via-red-800 to-red-950 drop-shadow-[0_0_15px_rgba(153,27,27,0.8)]">
+            <span className="ml-2 text-transparent bg-clip-text bg-gradient-to-br from-red-600 via-red-800 to-red-950 drop-shadow-[0_0_15px_rgba(153,27,27,0.8)]">
               VERSE
             </span>
           </div>
