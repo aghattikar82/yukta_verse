@@ -43,8 +43,8 @@ export async function POST(req: Request) {
     });
 
     const mailOptions = {
-      from: `"Lead Alert | Yukta Verse" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_TO,
+      from: `"Lead Alert | Yukta Verse" <${process.env.EMAIL_USER || "connect@yuktaverse.com"}>`,
+      to: process.env.EMAIL_TO || "connect@yuktaverse.com",
       subject: `New Program Lead: ${fullName} - ${program}`,
       html: `
         <div style="font-family: sans-serif; padding: 20px; color: #333; max-width: 600px; border: 1px solid #eee; border-radius: 10px;">
