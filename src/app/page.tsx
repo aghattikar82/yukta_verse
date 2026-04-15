@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, Users, Award, Briefcase, PlayCircle, BarChart3, Cloud, BrainCircuit, LineChart, Building, Network, MessageCircle, Star, Zap, Cpu } from "lucide-react";
 import LeadForm from "@/components/LeadForm";
+import HiringPartners from "@/components/HiringPartners";
 import { courses } from "@/data/courses";
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
 
@@ -200,6 +201,9 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* HIRING PARTNERS SECTION */}
+      <HiringPartners />
 
       {/* 3. OUR PROGRAMS (CORE SECTION) */}
       <section id="programs" className="py-32 relative">
