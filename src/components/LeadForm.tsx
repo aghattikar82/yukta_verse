@@ -3,15 +3,39 @@
 import { useState } from "react";
 
 export default function LeadForm() {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    program: "",
+  });
+  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    // Add CRM integration logic here
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 5000);
+    setLoading(true);
+    
+    try {
+      const response = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ fullName: "", email: "", phone: "", program: "" });
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("Failed to send request. Check your connection.");
+    } finally {
+      setLoading(false);
+      setTimeout(() => setSubmitted(false), 5000);
+    }
   };
 
   return (
@@ -35,6 +59,8 @@ export default function LeadForm() {
               <label className="block text-xs text-gray-400 mb-1">Full Name</label>
               <input
                 type="text"
+                value={formData.fullName}
+                onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                 className="w-full bg-[#05080c] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-500 transition-colors"
                 required
               />
@@ -43,6 +69,8 @@ export default function LeadForm() {
               <label className="block text-xs text-gray-400 mb-1">Email Address</label>
               <input
                 type="email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full bg-[#05080c] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-500 transition-colors"
                 required
               />
@@ -51,28 +79,37 @@ export default function LeadForm() {
               <label className="block text-xs text-gray-400 mb-1">Phone Number (WhatsApp)</label>
               <input
                 type="tel"
+                value={formData.phone}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 className="w-full bg-[#05080c] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-500 transition-colors"
                 required
               />
             </div>
             <div>
               <label className="block text-xs text-gray-400 mb-1">Interested Program</label>
-              <select className="w-full bg-[#05080c] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-500 transition-colors" required>
-                <option value="" disabled selected>Select a program</option>
+              <select 
+                value={formData.program}
+                onChange={(e) => setFormData({ ...formData, program: e.target.value })}
+                className="w-full bg-[#05080c] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-500 transition-colors" 
+                required
+              >
+                <option value="" disabled>Select a program</option>
                 <option value="data">Data & Business Analytics</option>
                 <option value="cloud">Cloud & DevOps</option>
                 <option value="genai">Gen AI & Agentic AI</option>
                 <option value="marketing">Digital Marketing</option>
                 <option value="finance">Financial Modelling</option>
                 <option value="multicloud">Multi-Cloud Architecture</option>
+                <option value="fullstack">Full Stack Development</option>
               </select>
             </div>
             
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold rounded-lg px-4 py-3 hover:shadow-[0_0_15px_rgba(225,29,72,0.5)] transition-all flex items-center justify-center gap-2 mt-4"
+              disabled={loading}
+              className="w-full bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold rounded-lg px-4 py-3 hover:shadow-[0_0_15px_rgba(225,29,72,0.5)] transition-all flex items-center justify-center gap-2 mt-4 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Get Free Consultation
+              {loading ? "Sending..." : "Get Free Consultation"}
             </button>
             <p className="text-[10px] text-gray-500 text-center mt-2">By submitting this form, you agree to our terms & privacy policy.</p>
           </form>

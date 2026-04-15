@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ChevronRight, Users, Award, Briefcase, PlayCircle, BarChart3, Cloud, BrainCircuit, LineChart, Building, Network, MessageCircle, Star, Zap, Cpu } from "lucide-react";
 import LeadForm from "@/components/LeadForm";
 import HiringPartners from "@/components/HiringPartners";
+import { triggerLeadModal } from "@/components/LeadModal";
 import { courses } from "@/data/courses";
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
 
@@ -98,9 +99,12 @@ export default function Home() {
               <Link href="#programs" className="w-full sm:w-auto px-10 py-5 rounded-full bg-gradient-to-r from-red-600 to-red-500 text-white font-black tracking-widest hover:from-red-500 hover:to-red-400 shadow-[0_0_30px_rgba(225,29,72,0.5)] hover:shadow-[0_0_50px_rgba(225,29,72,0.8)] transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1 text-[15px] uppercase ring-2 ring-red-600/50 hover:ring-red-400">
                 Explore Programs <ChevronRight className="group-hover:translate-x-1 transition-transform" size={20} />
               </Link>
-              <Link href="#consultation" className="w-full sm:w-auto px-10 py-5 rounded-full border border-white/20 bg-white/[0.05] text-white font-bold backdrop-blur-xl hover:bg-white/[0.1] hover:border-white/50 transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1 text-[15px] uppercase shadow-lg">
+              <button 
+                onClick={triggerLeadModal}
+                className="w-full sm:w-auto px-10 py-5 rounded-full border border-white/20 bg-white/[0.05] text-white font-bold backdrop-blur-xl hover:bg-white/[0.1] hover:border-white/50 transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1 text-[15px] uppercase shadow-lg cursor-pointer"
+              >
                 <PlayCircle size={24} className="text-red-500 group-hover:scale-110 transition-transform" /> Consultation
-              </Link>
+              </button>
             </motion.div>
           </motion.div>
           
@@ -424,9 +428,12 @@ export default function Home() {
                 Don't let the AI revolution pass you by. Join the next elite cohort and engineer your future.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-5 w-full max-w-2xl mx-auto z-20 relative">
-                <Link href="#programs" className="w-full sm:w-auto px-12 py-5 rounded-full bg-gradient-to-r from-red-600 to-red-500 text-white font-black uppercase tracking-widest hover:from-red-500 hover:to-red-400 shadow-[0_0_50px_rgba(225,29,72,0.6)] hover:shadow-[0_0_70px_rgba(225,29,72,0.9)] transition-all transform hover:-translate-y-2 hover:scale-105 active:scale-95 text-lg ring-2 ring-red-600/50 flex justify-center">
+                <button 
+                  onClick={triggerLeadModal}
+                  className="w-full sm:w-auto px-12 py-5 rounded-full bg-gradient-to-r from-red-600 to-red-500 text-white font-black uppercase tracking-widest hover:from-red-500 hover:to-red-400 shadow-[0_0_50px_rgba(225,29,72,0.6)] hover:shadow-[0_0_70px_rgba(225,29,72,0.9)] transition-all transform hover:-translate-y-2 hover:scale-105 active:scale-95 text-lg ring-2 ring-red-600/50 flex justify-center cursor-pointer"
+                >
                   Enroll Now
-                </Link>
+                </button>
                 <a href="https://wa.me/919110729595" className="w-full sm:w-auto px-12 py-5 rounded-full border-2 border-white/20 hover:border-white/80 backdrop-blur-xl bg-white/[0.05] hover:bg-white/[0.1] transition-all font-bold flex items-center justify-center gap-3 text-white text-lg transform hover:-translate-y-2 hover:scale-105 shadow-xl">
                   <MessageCircle size={28} className="text-[#25D366] drop-shadow-[0_0_15px_rgba(37,211,102,0.8)]" /> WhatsApp Us
                 </a>

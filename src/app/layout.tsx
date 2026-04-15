@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import StickyWhatsApp from "@/components/StickyWhatsApp";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import AnnouncementBar from "@/components/AnnouncementBar";
+import LeadModal from "@/components/LeadModal";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
@@ -35,6 +36,7 @@ export default function RootLayout({
         <Footer />
         <StickyWhatsApp />
         <ExitIntentPopup />
+        <LeadModal />
       </body>
     </html>
   );

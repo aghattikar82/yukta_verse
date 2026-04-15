@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { triggerLeadModal } from "./LeadModal";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -52,12 +53,12 @@ export default function Navbar() {
             <Link href="/" className="hover:text-red-400 transition-colors">Why Us</Link>
           </li>
           <li>
-            <Link
-              href="/#consultation"
-              className="px-5 py-2 rounded-full border border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition-all shadow-[0_0_15px_rgba(225,29,72,0.3)] hover:shadow-[0_0_20px_rgba(225,29,72,0.6)]"
+            <button
+              onClick={triggerLeadModal}
+              className="px-5 py-2 rounded-full border border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition-all shadow-[0_0_15px_rgba(225,29,72,0.3)] hover:shadow-[0_0_20px_rgba(225,29,72,0.6)] font-medium cursor-pointer"
             >
               Contact Us
-            </Link>
+            </button>
           </li>
         </ul>
 
@@ -77,7 +78,12 @@ export default function Navbar() {
           <Link href="/#consultation" onClick={() => setMobileMenuOpen(false)}>Career Support</Link>
           <Link href="/#mentors" onClick={() => setMobileMenuOpen(false)}>Mentors</Link>
           <Link href="/" onClick={() => setMobileMenuOpen(false)}>Why Us</Link>
-          <Link href="/#consultation" onClick={() => setMobileMenuOpen(false)} className="text-red-500 font-bold">Contact Us</Link>
+          <button 
+            onClick={() => { setMobileMenuOpen(false); triggerLeadModal(); }} 
+            className="text-red-500 font-bold text-left"
+          >
+            Contact Us
+          </button>
         </div>
       )}
     </nav>
