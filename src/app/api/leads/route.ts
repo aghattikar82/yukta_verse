@@ -4,11 +4,11 @@ import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
   // Check for critical environment variables
-  if (!process.env.FIREBASE_PROJECT_ID || !process.env.EMAIL_PASS) {
-    return NextResponse.json(
-      { error: "Configuration Error", message: "Server is missing environment variables (Firebase/Email). Please check Vercel settings." },
-      { status: 500 }
-    );
+  if (!process.env.FIREBASE_PROJECT_ID) {
+    return NextResponse.json({ error: "Config Error", message: "FIREBASE_PROJECT_ID is missing in Vercel settings." }, { status: 500 });
+  }
+  if (!process.env.EMAIL_PASS) {
+    return NextResponse.json({ error: "Config Error", message: "EMAIL_PASS is missing in Vercel settings." }, { status: 500 });
   }
 
   try {
@@ -33,11 +33,11 @@ export async function POST(req: Request) {
 
     // 2. Send Email Notification
     const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: Number(process.env.EMAIL_PORT),
-      secure: Number(process.env.EMAIL_PORT) === 465,
+      host: process.env.EMAIL_HOST || "smtp.hostinger.com",
+      port: Number(process.env.EMAIL_PORT) || 465,
+      secure: (process.env.EMAIL_PORT ? Number(process.env.EMAIL_PORT) === 465 : true),
       auth: {
-        user: process.env.EMAIL_USER,
+        user: process.env.EMAIL_USER || "connect@yuktaverse.com",
         pass: process.env.EMAIL_PASS,
       },
     });
