@@ -22,7 +22,7 @@ export default function HiringPartners() {
         <p className="text-gray-400 text-base max-w-2xl mx-auto">Our alumni are actively recruited by top global enterprises and fast-growing tech startups.</p>
       </div>
 
-      <div className="relative w-full flex overflow-x-hidden group mt-4">
+      <div className="relative z-20 w-full flex overflow-x-hidden group mt-8">
         <motion.div 
           className="flex whitespace-nowrap gap-12 sm:gap-24 items-center px-6"
           animate={{ x: ["0%", "-50%"] }}
@@ -32,7 +32,7 @@ export default function HiringPartners() {
           {[...companies, ...companies].map((company, i) => (
             <div 
               key={i} 
-              className="text-2xl sm:text-4xl lg:text-5xl font-black text-white/10 uppercase tracking-[0.2em] font-outfit hover:text-white/40 transition-colors cursor-default drop-shadow-md"
+              className="text-2xl sm:text-4xl lg:text-5xl font-black text-gray-500 uppercase tracking-[0.2em] font-outfit hover:text-white transition-colors cursor-default drop-shadow-md"
             >
               {company}
             </div>
