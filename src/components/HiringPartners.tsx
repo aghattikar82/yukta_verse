@@ -5,17 +5,17 @@ import { Building2 } from "lucide-react";
 
 export default function HiringPartners() {
   const companies = [
-    { name: "Google", domain: "google.com" },
-    { name: "Microsoft", domain: "microsoft.com" },
-    { name: "Amazon", domain: "amazon.com" },
-    { name: "Meta", domain: "meta.com" },
-    { name: "IBM", domain: "ibm.com" },
-    { name: "Accenture", domain: "accenture.com" },
-    { name: "TCS", domain: "tcs.com" },
-    { name: "Infosys", domain: "infosys.com" },
-    { name: "Oracle", domain: "oracle.com" },
-    { name: "Intel", domain: "intel.com" },
-    { name: "Salesforce", domain: "salesforce.com" },
+    { name: "Google", logo: "/logos/google.svg" },
+    { name: "Microsoft", logo: "/logos/microsoft.svg" },
+    { name: "Amazon", logo: "/logos/amazon.svg" },
+    { name: "Meta", logo: "/logos/meta.svg" },
+    { name: "IBM", logo: "/logos/ibm.svg" },
+    { name: "Accenture", logo: "/logos/accenture.svg" },
+    { name: "TCS", logo: "/logos/tcs.svg" },
+    { name: "Infosys", logo: "/logos/infosys.svg" },
+    { name: "Oracle", logo: "/logos/oracle.svg" },
+    { name: "Intel", logo: "/logos/intel.svg" },
+    { name: "Salesforce", logo: "/logos/salesforce.svg" },
   ];
 
   return (
@@ -39,12 +39,12 @@ export default function HiringPartners() {
           {[...companies, ...companies].map((company, i) => (
             <div 
               key={i} 
-              className="bg-white rounded-2xl px-8 py-5 flex items-center justify-center min-w-[220px] h-[90px] shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+              className="bg-white rounded-2xl px-10 py-6 flex items-center justify-center min-w-[200px] h-[100px] shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_35px_rgba(255,255,255,0.3)] transition-all duration-500 hover:-translate-y-2 cursor-pointer group"
             >
               <img 
-                src={`https://logo.clearbit.com/${company.domain}`} 
+                src={company.logo} 
                 alt={company.name} 
-                className="h-10 md:h-12 w-auto object-contain"
+                className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-110"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                   const fallback = e.currentTarget.nextElementSibling as HTMLElement;
