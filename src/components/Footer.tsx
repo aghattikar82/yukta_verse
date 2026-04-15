@@ -10,9 +10,12 @@ export default function Footer() {
             <div className="relative w-14 md:w-20 h-14 md:h-20 overflow-hidden rounded-full border border-red-500/20 shadow-[0_0_20px_rgba(225,29,72,0.6)] group-hover:scale-110 transition-all duration-300">
                <video src="/logo-animation.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover scale-110" />
             </div>
-            <div className="uppercase tracking-[0.1em] drop-shadow-lg flex items-center">
-               <span className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]">YUKTA</span>
-               <span className="ml-2 text-transparent bg-clip-text bg-gradient-to-br from-red-600 via-red-800 to-red-950 drop-shadow-[0_0_15px_rgba(153,27,27,0.8)]">VERSE</span>
+            <div className="flex flex-col">
+              <div className="uppercase tracking-[0.1em] drop-shadow-lg flex items-center">
+                 <span className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]">YUKTA</span>
+                 <span className="ml-2 text-transparent bg-clip-text bg-gradient-to-br from-red-600 via-red-800 to-red-950 drop-shadow-[0_0_15px_rgba(153,27,27,0.8)]">VERSE</span>
+              </div>
+              <span className="text-[10px] text-gray-500 font-bold tracking-widest uppercase mt-1">Learn Future Skills in One Place</span>
             </div>
           </Link>
           <p className="text-gray-400 mb-6 text-sm">Learn Future Skills in One Place. The ultimate platform to build your tech and AI career.</p>

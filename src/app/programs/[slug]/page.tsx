@@ -40,7 +40,20 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
              <ArrowLeft size={16} /> Back to Programs
           </Link>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-4xl">
-            <h1 className="text-4xl md:text-6xl font-black font-outfit leading-tight mb-6 drop-shadow-2xl">{course.title}</h1>
+            <h1 className="text-4xl md:text-6xl font-black font-outfit leading-tight mb-4 drop-shadow-2xl">{course.title}</h1>
+            
+            {course.collaboration && (
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3 }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-6 backdrop-blur-md"
+              >
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                <span className="text-sm font-bold tracking-wider text-gray-200 uppercase">{course.collaboration}</span>
+              </motion.div>
+            )}
+
             <p className="text-xl md:text-2xl text-gray-300 font-medium mb-12 leading-relaxed border-l-4 border-red-600 pl-6">{course.shortDesc}</p>
             
             <div className="flex flex-wrap gap-6 items-center">
@@ -124,13 +137,27 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
 
             {/* Projects & Experiential */}
             {course.projects && (
-              <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once:true }}>
-                 <h2 className="text-3xl font-black font-outfit mb-8 text-white">{course.projectsHeading}</h2>
+              <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once:true }} className="relative">
+                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+                   <div>
+                     <h2 className="text-3xl font-black font-outfit text-white">{course.projectsHeading}</h2>
+                     <p className="text-gray-400 mt-2 font-medium">Learn by doing. Build a production-grade portfolio with 8+ industry projects.</p>
+                   </div>
+                   <div className="bg-green-500/10 text-green-400 px-6 py-3 rounded-2xl border border-green-500/20 font-bold text-sm flex items-center gap-2 uppercase tracking-widest">
+                     <CheckCircle2 size={18} /> Hands-On Learning Enabled
+                   </div>
+                 </div>
+                 
                  <div className="grid gap-6 md:grid-cols-2">
                    {course.projects.map((proj: any, idx: number) => (
-                      <div key={idx} className="bg-[#0a0a0a] border border-white/10 p-8 rounded-3xl group hover:border-red-500/50 transition-colors">
-                         <div className="bg-white/5 w-12 h-12 rounded-xl flex items-center justify-center mb-6 group-hover:bg-red-600/20 group-hover:text-red-500 transition-colors">
-                           <Briefcase size={20} />
+                      <div key={idx} className={`bg-[#0a0a0a] border border-white/10 p-8 rounded-3xl group hover:border-red-500/50 transition-all duration-300 ${proj.title.includes('Capstone') ? 'md:col-span-2 border-red-500/30 bg-gradient-to-br from-red-950/10 to-transparent' : ''}`}>
+                         <div className="flex justify-between items-start mb-6">
+                           <div className="bg-white/5 w-12 h-12 rounded-xl flex items-center justify-center group-hover:bg-red-600/20 group-hover:text-red-500 transition-colors">
+                             <Briefcase size={20} />
+                           </div>
+                           {proj.title.includes('Capstone') && (
+                             <span className="bg-red-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter shadow-lg shadow-red-600/20">Final Capstone</span>
+                           )}
                          </div>
                          <h3 className="text-xl font-bold mb-3 text-white">{proj.title}</h3>
                          <p className="text-gray-400 text-sm leading-relaxed">{proj.desc}</p>
@@ -160,14 +187,33 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
 
             {/* Skills & Tools */}
             {course.tools && (
-              <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once:true }} className="bg-white/[0.02] p-10 rounded-[2.5rem] border border-white/5">
-                 <h2 className="text-2xl font-black font-outfit mb-8 text-white">{course.skillsHeading || "Skills & Tools Mastered"}</h2>
-                 <div className="flex flex-wrap gap-4">
-                   {course.tools.map((tool: string, idx: number) => (
-                      <span key={idx} className="bg-black border border-white/10 px-6 py-4 rounded-2xl text-gray-300 font-bold font-outfit text-sm flex items-center gap-3 shadow-xl">
-                        <Star size={16} className="text-red-500" /> {tool}
-                      </span>
-                   ))}
+              <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once:true }} className="bg-white/[0.02] p-10 rounded-[3rem] border border-white/5 relative overflow-hidden">
+                 <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/5 blur-[100px] rounded-full pointer-events-none"></div>
+                 <h2 className="text-3xl font-black font-outfit mb-10 text-white relative z-10">{course.skillsHeading || "Master the Modern Toolstack"}</h2>
+                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 relative z-10">
+                   {course.tools.map((tool: string, idx: number) => {
+                     const toolSlug = tool.toLowerCase().replace(/\s+/g, '').replace(/\+/g, 'plus').replace(/\./g, 'dot').replace(/-/g, '').replace(/,/g, '');
+                     return (
+                       <div key={idx} className="bg-black border border-white/10 p-6 rounded-3xl flex flex-col items-center justify-center gap-4 hover:border-red-500/50 hover:-translate-y-2 transition-all duration-300 group shadow-xl">
+                         <div className="relative w-12 h-12 flex items-center justify-center">
+                           <img 
+                             src={`https://cdn.simpleicons.org/${toolSlug}/white`} 
+                             alt={tool}
+                             className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
+                             onError={(e) => {
+                               e.currentTarget.style.display = 'none';
+                               const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                               if(fallback) fallback.style.display = 'flex';
+                             }}
+                           />
+                           <div style={{ display: 'none' }} className="w-10 h-10 bg-white/10 rounded-xl items-center justify-center">
+                             <Star size={20} className="text-red-500" />
+                           </div>
+                         </div>
+                         <span className="text-xs font-black uppercase tracking-widest text-gray-400 group-hover:text-white transition-colors text-center">{tool}</span>
+                       </div>
+                     );
+                   })}
                  </div>
               </motion.div>
             )}
