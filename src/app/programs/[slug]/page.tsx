@@ -39,7 +39,7 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
              <ArrowLeft size={16} /> Back to Programs
           </Link>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-4xl">
-            <h1 className="text-5xl md:text-7xl font-black font-outfit leading-tight mb-6 drop-shadow-2xl">{course.title}</h1>
+            <h1 className="text-4xl md:text-6xl font-black font-outfit leading-tight mb-6 drop-shadow-2xl">{course.title}</h1>
             <p className="text-xl md:text-2xl text-gray-300 font-medium mb-12 leading-relaxed border-l-4 border-red-600 pl-6">{course.shortDesc}</p>
             
             <div className="flex flex-wrap gap-6 items-center">
