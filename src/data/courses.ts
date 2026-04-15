@@ -582,5 +582,92 @@ export const courses = [
     "faqs": [
       { "q": "Do we cover GCP?", "a": "Yes, GCP is one of the three core pillars of this program." }
     ]
+  },
+  {
+    "slug": "full-stack-development",
+    "title": "PGP in Full Stack Software Development",
+    "collaboration": "In collaboration with Microsoft & Meta",
+    "shortDesc": "Master end-to-end web development with modern stacks. Build scalable applications and launch your career as a Full Stack Developer.",
+    "price": "₹39,999",
+    "priceDetail": "Including GST",
+    "duration": "6 Months",
+    "img": "/course_fullstack.png",
+    "overview": {
+      "heading": "Overview: Full Stack Software Development",
+      "content": "Become a versatile developer capable of handling both frontend and backend technologies. This project-heavy program covers everything from UI/UX design to database management and cloud deployment, ensuring you're ready for the modern tech industry."
+    },
+    "whyPursue": {
+      "heading": "Why Pursue Full Stack Development?",
+      "content": "Full Stack Developers are among the most sought-after professionals in the tech world. Being able to build a complete product from scratch gives you immense career flexibility and high earning potential."
+    },
+    "advantage": {
+      "heading": "The Yukta Verse Tech Advantage",
+      "content": "Our curriculum is built on industry-standard stacks (MERN/Next.js). You'll work on real-world production-grade projects and receive mentorship from senior developers at top tech firms."
+    },
+    "certification": {
+      "heading": "Professional Full Stack Developer Certification",
+      "content": "Upon successful completion, you will receive a Professional Certificate in Full Stack Software Development, recognized by our industry partners."
+    },
+    "curriculumHeading": "Full Stack Web Development Curriculum",
+    "curriculum": [
+      { "module": "Module 1", "title": "Frontend Fundamentals: HTML5, CSS3 & Modern JavaScript" },
+      { "module": "Module 2", "title": "Advanced UI Development with React.js & Tailwind CSS" },
+      { "module": "Module 3", "title": "State Management & Responsive Design Patterns" },
+      { "module": "Module 4", "title": "Backend Mastery: Node.js & Express.js" },
+      { "module": "Module 5", "title": "Database Architecture: SQL (PostgreSQL) vs NoSQL (MongoDB)" },
+      { "module": "Module 6", "title": "API Design, Authentication & Security (JWT/OAuth)" },
+      { "module": "Module 7", "title": "Next.js: Server-Side Rendering & Static Site Generation" },
+      { "module": "Module 8", "title": "Version Control (Git/GitHub) & Collaborative Development" },
+      { "module": "Module 9", "title": "Testing, Debugging & Performance Optimization" },
+      { "module": "Module 10", "title": "Cloud Deployment (AWS/Vercel) & DevOps Basics" }
+    ],
+    "teamHeading": "Learn from Senior Engineers",
+    "team": [
+      { "name": "Aditya Sharma", "role": "Senior Full Stack Dev" },
+      { "name": "Priya Nair", "role": "UI/UX Specialist" }
+    ],
+    "projectsHeading": "Build a Portfolio of Real-World Applications",
+    "projects": [
+      { "title": "Project 1: Modern E-commerce Platform", "desc": "Build a full-featured online store with payment integration." },
+      { "title": "Project 2: Real-time Collaborative Tool", "desc": "Create a workspace with live updates using WebSockets." },
+      { "title": "Project 3: AI-Integrated Content CMS", "desc": "Develop a blog platform with Gen-AI writing assistance." },
+      { "title": "Project 4: Social Media Dashboard", "desc": "Design a complex data visualization interface for social metrics." },
+      { "title": "Project 5: SaaS Subscription Engine", "desc": "Implement a recurring billing system with multi-tier access." },
+      { "title": "Project 6: Interactive Task Manager", "desc": "Build a Kanban-style board with drag-and-drop features." },
+      { "title": "Project 7: Healthcare Booking System", "desc": "Design a secure portal for patient-doctor interactions." },
+      { "title": "Project 8: Personalized Portfolio Site", "desc": "Create a high-performance, SEO-optimized personal brand page." },
+      { "title": "Capstone Project: The Enterprise SaaS Solution", "desc": "Architect and deploy a scalable, multi-tenant SaaS application from scratch, incorporating all aspects of the full-stack journey." }
+    ],
+    "journeyHeading": "Your Full Stack Development Journey",
+    "journey": "From writing your first tag to deploying a scalable microservice architecture, your 6-month journey is designed for maximum industry impact.",
+    "supportHeading": "Career Support at Every Step",
+    "support": "We offer dedicated portfolio reviews, mock technical interviews, and direct referrals to our hiring network.",
+    "feesHeading": "Program Fees",
+    "fees": "₹39,999 (Inclusive of all training and placement support). EMI options available.",
+    "eligibilityHeading": "Who Can Join?",
+    "eligibility": "Ideal for students, freshers, or professionals looking to pivot into software engineering. No prior coding experience required, though a passion for building things is essential.",
+    "skillsHeading": "The Full Stack Toolbelt",
+    "tools": [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Node.js",
+      "PostgreSQL",
+      "MongoDB",
+      "Prisma",
+      "TailwindCSS",
+      "AWS",
+      "Docker"
+    ],
+    "careerOutcomesHeading": "Your Future in Tech",
+    "careerOutcomes": "Graduates secure roles as Full Stack Developers, Frontend/Backend Engineers, or Product Developers at leading tech companies.",
+    "rightProgramHeading": "Is This Program Right for You?",
+    "rightProgram": "If you want to build products from end-to-end and stay relevant in the fast-paced tech world, this is the perfect fit.",
+    "faqsHeading": "FAQs",
+    "faqs": [
+      { "q": "Do I need a CS degree?", "a": "No, our program is skills-focused and open to all backgrounds." },
+      { "q": "Is placement assistance guaranteed?", "a": "We provide intensive placement training and connect you with 500+ hiring partners." }
+    ]
   }
 ];
