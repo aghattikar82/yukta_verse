@@ -45,8 +45,8 @@ export default function Footer() {
         <div>
           <h4 className="text-lg font-semibold mb-6">Contact Info</h4>
           <ul className="space-y-4 text-gray-400 text-sm">
-            <li className="flex items-center gap-3"><Mail size={16} className="text-[#FFD700]" /> hello@yuktaverse.ai</li>
-            <li className="flex items-center gap-3"><Phone size={16} className="text-[#FFD700]" /> +91 98765 43210</li>
+            <li className="flex items-center gap-3"><Mail size={16} className="text-[#FFD700]" /> connect@yuktaverse.com</li>
+            <li className="flex items-center gap-3"><Phone size={16} className="text-[#FFD700]" /> +91 91107 29595</li>
             <li className="flex items-center gap-3"><MapPin size={16} className="text-[#FFD700]" /> Tech Hub, Bangalore, India</li>
           </ul>
         </div>

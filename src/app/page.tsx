@@ -423,7 +423,7 @@ export default function Home() {
                 <Link href="#programs" className="w-full sm:w-auto px-12 py-5 rounded-full bg-gradient-to-r from-red-600 to-red-500 text-white font-black uppercase tracking-widest hover:from-red-500 hover:to-red-400 shadow-[0_0_50px_rgba(225,29,72,0.6)] hover:shadow-[0_0_70px_rgba(225,29,72,0.9)] transition-all transform hover:-translate-y-2 hover:scale-105 active:scale-95 text-lg ring-2 ring-red-600/50 flex justify-center">
                   Enroll Now
                 </Link>
-                <a href="https://wa.me/919876543210" className="w-full sm:w-auto px-12 py-5 rounded-full border-2 border-white/20 hover:border-white/80 backdrop-blur-xl bg-white/[0.05] hover:bg-white/[0.1] transition-all font-bold flex items-center justify-center gap-3 text-white text-lg transform hover:-translate-y-2 hover:scale-105 shadow-xl">
+                <a href="https://wa.me/919110729595" className="w-full sm:w-auto px-12 py-5 rounded-full border-2 border-white/20 hover:border-white/80 backdrop-blur-xl bg-white/[0.05] hover:bg-white/[0.1] transition-all font-bold flex items-center justify-center gap-3 text-white text-lg transform hover:-translate-y-2 hover:scale-105 shadow-xl">
                   <MessageCircle size={28} className="text-[#25D366] drop-shadow-[0_0_15px_rgba(37,211,102,0.8)]" /> WhatsApp Us
                 </a>
               </div>
