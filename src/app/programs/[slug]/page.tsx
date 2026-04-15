@@ -2,6 +2,7 @@
 
 import { use } from "react";
 import { courses } from "@/data/courses";
+import HiringPartners from "@/components/HiringPartners";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -69,7 +70,10 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
         </div>
       </section>
 
-      {/* 2. Main Body Content */}
+      {/* Hiring Partners */}
+      <HiringPartners />
+
+      {/* 3. Main Body Content */}
       <section className="py-16">
         <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-16 relative">
           
