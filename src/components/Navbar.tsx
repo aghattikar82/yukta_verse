@@ -16,16 +16,15 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 w-full z-50 transition-all duration-300 ${
-        scrolled
+      className={`sticky top-0 w-full z-50 transition-all duration-300 ${scrolled
           ? "bg-[#05080c]/85 backdrop-blur-xl shadow-lg border-b border-white/5 py-3"
           : "bg-[#050505] py-5"
-      }`}
+        }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-4 text-xl font-black font-outfit shadow-sm group">
           <div className="relative w-14 md:w-20 h-14 md:h-20 overflow-hidden rounded-full border border-red-500/20 shadow-[0_0_20px_rgba(225,29,72,0.6)] group-hover:scale-110 transition-all duration-300">
-             <video src="/logo-animation.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover scale-110" />
+            <video src="/logo-animation.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover scale-110" />
           </div>
           <div className="flex flex-col">
             <div className="uppercase tracking-[0.1em] drop-shadow-lg flex items-center">
@@ -34,7 +33,7 @@ export default function Navbar() {
                 VERSE
               </span>
             </div>
-            <span className="text-[8px] md:text-[10px] text-gray-400 font-bold tracking-widest uppercase mt-0.5">Learn Future Skills in One Place</span>
+            <span className="text-[8px] md:text-[10px] text-gray-400 font-bold tracking-widest uppercase mt-0.5">Learn Future Skills Under One Verse</span>
           </div>
         </Link>
 

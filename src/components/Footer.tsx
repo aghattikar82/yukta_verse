@@ -8,23 +8,23 @@ export default function Footer() {
         <div>
           <Link href="/" className="flex items-center gap-4 mb-6 text-xl font-black font-outfit shadow-sm group w-max">
             <div className="relative w-14 md:w-20 h-14 md:h-20 overflow-hidden rounded-full border border-red-500/20 shadow-[0_0_20px_rgba(225,29,72,0.6)] group-hover:scale-110 transition-all duration-300">
-               <video src="/logo-animation.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover scale-110" />
+              <video src="/logo-animation.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover scale-110" />
             </div>
             <div className="flex flex-col">
               <div className="uppercase tracking-[0.1em] drop-shadow-lg flex items-center">
-                 <span className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]">YUKTA</span>
-                 <span className="ml-2 text-transparent bg-clip-text bg-gradient-to-br from-red-600 via-red-800 to-red-950 drop-shadow-[0_0_15px_rgba(153,27,27,0.8)]">VERSE</span>
+                <span className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]">YUKTA</span>
+                <span className="ml-2 text-transparent bg-clip-text bg-gradient-to-br from-red-600 via-red-800 to-red-950 drop-shadow-[0_0_15px_rgba(153,27,27,0.8)]">VERSE</span>
               </div>
-              <span className="text-[10px] text-gray-500 font-bold tracking-widest uppercase mt-1">Learn Future Skills in One Place</span>
+              <span className="text-[10px] text-gray-500 font-bold tracking-widest uppercase mt-1">Learn Future Skills Under One Verse</span>
             </div>
           </Link>
-          <p className="text-gray-400 mb-6 text-sm">Learn Future Skills in One Place. The ultimate platform to build your tech and AI career.</p>
+          <p className="text-gray-400 mb-6 text-sm">Learn Future Skills Under One Verse. The ultimate platform to build your tech and AI career.</p>
           <div className="flex space-x-4">
             <a href="#" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-[#FFD700] hover:text-black transition-colors" title="LinkedIn"><Share2 size={18} /></a>
             <a href="#" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-[#FFD700] hover:text-black transition-colors" title="Website"><Globe size={18} /></a>
           </div>
         </div>
-        
+
         <div>
           <h4 className="text-lg font-semibold mb-6">Navigation</h4>
           <ul className="space-y-3 text-gray-400 text-sm">
@@ -54,7 +54,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      
+
       <div className="border-t border-white/5 pt-8 text-center text-gray-500 text-sm">
         <p>&copy; {new Date().getFullYear()} YUKTA VERSE (AI Lab). All Rights Reserved.</p>
       </div>
