@@ -1,24 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Building2 } from "lucide-react";
-import Image from "next/image";
-
-const companies = [
-  { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
-  { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
-  { name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
-  { name: "Meta", logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" },
-  { name: "IBM", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" },
-  { name: "Accenture", logo: "https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture_2017_logo.svg" },
-  { name: "TCS", logo: "https://upload.wikimedia.org/wikipedia/commons/b/b1/Tata_Consultancy_Services_Logo.svg" },
-  { name: "Infosys", logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" },
-  { name: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" },
-  { name: "Intel", logo: "https://upload.wikimedia.org/wikipedia/commons/c/c9/Intel_logo_%282020%2C_light_blue%29.svg" },
-  { name: "Salesforce", logo: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" },
-];
+import { Building2, Infinity, Cloud } from "lucide-react";
 
 export default function HiringPartners() {
+  const companies = [
+    { id: "google", node: <span className="font-sans font-medium tracking-tighter text-4xl">Google</span> },
+    { id: "microsoft", node: <div className="flex items-center gap-3"><div className="grid grid-cols-2 gap-[3px]"><div className="w-4 h-4 bg-gray-400"></div><div className="w-4 h-4 bg-gray-400"></div><div className="w-4 h-4 bg-gray-400"></div><div className="w-4 h-4 bg-gray-400"></div></div><span className="font-semibold font-sans tracking-tight text-4xl">Microsoft</span></div> },
+    { id: "amazon", node: <span className="font-sans font-bold tracking-tighter lowercase text-4xl">amazon</span> },
+    { id: "meta", node: <div className="flex items-center gap-2"><Infinity size={40} strokeWidth={2.5} /><span className="font-sans font-medium text-4xl">Meta</span></div> },
+    { id: "ibm", node: <span className="font-serif font-black tracking-widest border-y-4 border-gray-400 border-dotted px-1 text-4xl">IBM</span> },
+    { id: "accenture", node: <span className="font-sans font-black lowercase tracking-tighter text-4xl">accenture<span className="text-red-500 font-normal">></span></span> },
+    { id: "tcs", node: <span className="font-sans font-black tracking-widest text-4xl">TCS</span> },
+    { id: "infosys", node: <span className="font-sans font-bold tracking-wide text-4xl">Infosys</span> },
+    { id: "oracle", node: <span className="font-sans font-black tracking-tighter text-4xl">ORACLE</span> },
+    { id: "intel", node: <div className="border-[3px] border-gray-400 rounded-full px-5 py-1 font-sans font-bold italic text-4xl">intel</div> },
+    { id: "salesforce", node: <div className="flex items-center gap-2"><Cloud size={40} fill="currentColor" /><span className="font-sans font-medium italic text-4xl">salesforce</span></div> },
+  ];
+
   return (
     <div className="py-20 overflow-hidden bg-[#050505] border-y border-white/5 relative perspective-1000">
       <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-[#050505] z-10 pointer-events-none w-full"></div>
@@ -30,31 +29,19 @@ export default function HiringPartners() {
         <p className="text-gray-400 text-base max-w-2xl mx-auto">Our alumni are actively recruited by top global enterprises and fast-growing tech startups.</p>
       </div>
 
-      <div className="relative z-20 w-full flex overflow-x-hidden group mt-8">
+      <div className="relative z-20 w-full flex overflow-x-hidden group mt-10">
         <motion.div 
-          className="flex whitespace-nowrap gap-16 sm:gap-32 items-center px-6"
+          className="flex whitespace-nowrap gap-20 sm:gap-32 items-center px-6"
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 40, ease: "linear", repeat: Infinity }}
+          transition={{ duration: 45, ease: "linear", repeat: Infinity }}
         >
-          {/* Duplicate the list to make it infinite loop smoothly */}
+          {/* Duplicate the array to make it infinite loop smoothly */}
           {[...companies, ...companies].map((company, i) => (
             <div 
               key={i} 
-              className="flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300 filter brightness-0 invert"
+              className="flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity duration-300 text-gray-400 drop-shadow-md cursor-default"
             >
-              <img 
-                src={company.logo} 
-                alt={company.name} 
-                className="h-10 md:h-14 object-contain"
-                onError={(e) => { 
-                   e.currentTarget.style.display = 'none'; 
-                   const span = e.currentTarget.parentElement?.querySelector('span');
-                   if (span) span.style.display = 'inline-block';
-                }} 
-              />
-              <span style={{ display: 'none' }} className="text-2xl sm:text-4xl lg:text-5xl font-black text-gray-500 uppercase tracking-[0.2em] font-outfit drop-shadow-md">
-                 {company.name}
-              </span>
+              {company.node}
             </div>
           ))}
         </motion.div>
