@@ -40,7 +40,7 @@ export default function HiringPartners() {
           {[...companies, ...companies].map((company, i) => (
             <div 
               key={i} 
-              className="flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
+              className="flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300 filter brightness-0 invert"
             >
               <img 
                 src={company.logo} 
