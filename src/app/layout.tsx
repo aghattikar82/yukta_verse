@@ -13,6 +13,10 @@ const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 export const metadata: Metadata = {
   title: "YUKTA VERSE | Premium AI & Tech Learning",
   description: "Learn Future Skills in One Place. Master AI, Data & Future Technologies with industry-ready programs.",
+  icons: {
+    icon: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
