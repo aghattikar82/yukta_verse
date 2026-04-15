@@ -585,7 +585,7 @@ export const courses = [
   },
   {
     "slug": "full-stack-development",
-    "title": "PGP in Full Stack Software Development",
+    "title": "Full Stack Software Development",
     "collaboration": "In collaboration with Microsoft & Meta",
     "shortDesc": "Master end-to-end web development with modern stacks. Build scalable applications and launch your career as a Full Stack Developer.",
     "price": "₹39,999",
