@@ -1,21 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Building2, Infinity, Cloud } from "lucide-react";
+import { Building2 } from "lucide-react";
 
 export default function HiringPartners() {
   const companies = [
-    { id: "google", node: <span className="font-sans font-medium tracking-tighter text-4xl">Google</span> },
-    { id: "microsoft", node: <div className="flex items-center gap-3"><div className="grid grid-cols-2 gap-[3px]"><div className="w-4 h-4 bg-gray-400"></div><div className="w-4 h-4 bg-gray-400"></div><div className="w-4 h-4 bg-gray-400"></div><div className="w-4 h-4 bg-gray-400"></div></div><span className="font-semibold font-sans tracking-tight text-4xl">Microsoft</span></div> },
-    { id: "amazon", node: <span className="font-sans font-bold tracking-tighter lowercase text-4xl">amazon</span> },
-    { id: "meta", node: <div className="flex items-center gap-2"><Infinity size={40} strokeWidth={2.5} /><span className="font-sans font-medium text-4xl">Meta</span></div> },
-    { id: "ibm", node: <span className="font-serif font-black tracking-widest border-y-4 border-gray-400 border-dotted px-1 text-4xl">IBM</span> },
-    { id: "accenture", node: <span className="font-sans font-black lowercase tracking-tighter text-4xl">accenture<span className="text-red-500 font-normal">></span></span> },
-    { id: "tcs", node: <span className="font-sans font-black tracking-widest text-4xl">TCS</span> },
-    { id: "infosys", node: <span className="font-sans font-bold tracking-wide text-4xl">Infosys</span> },
-    { id: "oracle", node: <span className="font-sans font-black tracking-tighter text-4xl">ORACLE</span> },
-    { id: "intel", node: <div className="border-[3px] border-gray-400 rounded-full px-5 py-1 font-sans font-bold italic text-4xl">intel</div> },
-    { id: "salesforce", node: <div className="flex items-center gap-2"><Cloud size={40} fill="currentColor" /><span className="font-sans font-medium italic text-4xl">salesforce</span></div> },
+    { name: "Google", domain: "google.com" },
+    { name: "Microsoft", domain: "microsoft.com" },
+    { name: "Amazon", domain: "amazon.com" },
+    { name: "Meta", domain: "meta.com" },
+    { name: "IBM", domain: "ibm.com" },
+    { name: "Accenture", domain: "accenture.com" },
+    { name: "TCS", domain: "tcs.com" },
+    { name: "Infosys", domain: "infosys.com" },
+    { name: "Oracle", domain: "oracle.com" },
+    { name: "Intel", domain: "intel.com" },
+    { name: "Salesforce", domain: "salesforce.com" },
   ];
 
   return (
@@ -29,19 +29,31 @@ export default function HiringPartners() {
         <p className="text-gray-400 text-base max-w-2xl mx-auto">Our alumni are actively recruited by top global enterprises and fast-growing tech startups.</p>
       </div>
 
-      <div className="relative z-20 w-full flex overflow-x-hidden group mt-10">
+      <div className="relative z-20 w-full overflow-hidden mt-10 p-2">
         <motion.div 
-          className="flex whitespace-nowrap gap-20 sm:gap-32 items-center px-6"
+          className="flex w-max gap-8 sm:gap-12 items-center"
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 45, ease: "linear", repeat: Infinity }}
+          transition={{ duration: 35, ease: "linear", repeat: Infinity }}
         >
           {/* Duplicate the array to make it infinite loop smoothly */}
           {[...companies, ...companies].map((company, i) => (
             <div 
               key={i} 
-              className="flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity duration-300 text-gray-400 drop-shadow-md cursor-default"
+              className="bg-white rounded-2xl px-8 py-5 flex items-center justify-center min-w-[220px] h-[90px] shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] transition-all duration-300 hover:-translate-y-2 cursor-pointer"
             >
-              {company.node}
+              <img 
+                src={`https://logo.clearbit.com/${company.domain}`} 
+                alt={company.name} 
+                className="h-10 md:h-12 w-auto object-contain"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                  if(fallback) fallback.style.display = 'block';
+                }}
+              />
+              <span style={{ display: 'none' }} className="text-xl md:text-2xl font-black text-black tracking-widest font-outfit uppercase">
+                {company.name}
+              </span>
             </div>
           ))}
         </motion.div>
