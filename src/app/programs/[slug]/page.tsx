@@ -195,6 +195,33 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
               </motion.div>
             )}
 
+            {/* Certification */}
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once:true }}>
+              <div className="bg-gradient-to-br from-[#111] to-black border border-white/10 p-8 md:p-12 rounded-[3rem] shadow-2xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-white to-gray-400"></div>
+                <h2 className="text-3xl font-black font-outfit mb-4 text-white">{course.certification?.heading || "Program Certificate"}</h2>
+                <p className="text-gray-400 text-lg leading-relaxed mb-10">{course.certification?.content || "Earn a prestigious industry-recognized certificate upon successful completion of this program."}</p>
+                
+                <div className="flex justify-center w-full relative z-10">
+                  <motion.div 
+                    whileHover={{ y: -20, scale: 1.03 }}
+                    transition={{ type: "spring", bounce: 0.6, stiffness: 200 }}
+                    className="w-full md:w-[80%] relative bg-white p-3 rounded-2xl shadow-[0_0_40px_rgba(255,255,255,0.4)] hover:shadow-[0_0_70px_rgba(255,255,255,0.8)] cursor-pointer transition-shadow duration-500"
+                  >
+                    <div className="relative aspect-[1.414/1] w-full overflow-hidden rounded-xl bg-gray-50 flex items-center justify-center border border-gray-200">
+                      <Image 
+                        src={`/${course.slug}-cert.png`} 
+                        alt={`${course.title} Certificate`}
+                        fill
+                        className="object-contain"
+                        unoptimized
+                      />
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+
             {/* Career Outcomes */}
             {course.careerOutcomes && (
               <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once:true }}>
