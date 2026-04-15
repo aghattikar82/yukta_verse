@@ -27,7 +27,8 @@ export default function LeadForm() {
         setSubmitted(true);
         setFormData({ fullName: "", email: "", phone: "", program: "" });
       } else {
-        alert("Something went wrong. Please try again.");
+        const errorData = await response.json();
+        alert(`Error: ${errorData.message || errorData.error || "Something went wrong"}`);
       }
     } catch (error) {
       console.error("Form submission error:", error);

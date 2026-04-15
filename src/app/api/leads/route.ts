@@ -3,6 +3,14 @@ import { db } from "@/data/firebase";
 import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
+  // Check for critical environment variables
+  if (!process.env.FIREBASE_PROJECT_ID || !process.env.EMAIL_PASS) {
+    return NextResponse.json(
+      { error: "Configuration Error", message: "Server is missing environment variables (Firebase/Email). Please check Vercel settings." },
+      { status: 500 }
+    );
+  }
+
   try {
     const body = await req.json();
     const { fullName, email, phone, program } = body;
